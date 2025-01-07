@@ -15,8 +15,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import ResultScreen from './ResultScreen';
 
-function App(): React.JSX.Element {
+const Stack = createNativeStackNavigator();
+
+type FormScreenProps = {
+  navigation: any;
+};
+
+function FormScreen({navigation}: FormScreenProps): React.JSX.Element {
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
   const [email, setEmail] = useState('');
@@ -106,16 +115,11 @@ function App(): React.JSX.Element {
     const isEmailValid = validateEmailField(email);
 
     if (isNomValid && isPrenomValid && isEmailValid) {
-      console.log('Formulaire soumis avec succès:', {
+      // Naviguer vers la page de résultat avec les données
+      navigation.navigate('Result', {
         nom,
         prenom,
-        email,
       });
-      // Réinitialiser le formulaire après soumission réussie
-      setNom('');
-      setPrenom('');
-      setEmail('');
-      setFormSubmitted(false);
     } else {
       console.log('Le formulaire contient des erreurs');
     }
@@ -223,5 +227,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+function App(): React.JSX.Element {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Form"
+          component={FormScreen}
+          options={{title: 'Formulaire d\'inscription'}}
+        />
+        <Stack.Screen
+          name="Result"
+          component={ResultScreen}
+          options={{title: 'Résultat'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
