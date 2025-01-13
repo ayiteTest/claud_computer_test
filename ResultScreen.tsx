@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
-import {SvgUri} from 'react-native-svg';
+import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 
 type ResultScreenProps = {
   route: {
@@ -17,10 +16,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({route}) => {
   return (
     <View style={styles.container}>
       <View style={styles.backgroundContainer}>
-        <SvgUri
-          width="100%"
-          height="100%"
-          uri={require('./assets/mario-thumbs-up.svg')}
+        <Image
+          source={require('./assets/mario-character.png')}
+          style={styles.backgroundImage}
+          resizeMode="contain"
         />
       </View>
       <View style={styles.contentContainer}>
@@ -45,6 +44,12 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     opacity: 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
   },
   contentContainer: {
     flex: 1,
