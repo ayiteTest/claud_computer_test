@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <!-- Corps principal -->
+  <circle cx="400" cy="300" r="150" fill="#e52521"/> <!-- Haut rouge -->
+  <rect x="250" y="300" width="300" height="200" fill="#e52521"/> <!-- Salopette rouge -->
+  
+  <!-- Tête -->
+  <circle cx="400" cy="200" r="100" fill="#ffd699"/> <!-- Visage -->
+  <circle cx="370" cy="180" r="15" fill="#000"/> <!-- Œil gauche -->
+  <circle cx="430" cy="180" r="15" fill="#000"/> <!-- Œil droit -->
+  <path d="M 370 220 Q 400 240 430 220" stroke="#000" stroke-width="5" fill="none"/> <!-- Sourire -->
+  
+  <!-- Casquette -->
+  <path d="M 300 150 Q 400 100 500 150 L 480 180 Q 400 140 320 180 Z" fill="#e52521"/>
+  <circle cx="400" cy="150" r="20" fill="#e52521"/> <!-- Haut de la casquette -->
+  <text x="390" y="160" font-size="24" fill="#fff">M</text>
+  
+  <!-- Bras avec pouce en l'air -->
+  <path d="M 500 300 Q 550 250 560 200 Q 570 180 590 190 L 600 210 Q 580 220 575 240 Q 560 300 520 330" fill="#ffd699"/>
+  
+  <!-- Salopette détails -->
+  <circle cx="350" cy="320" r="15" fill="#ffcb2f"/> <!-- Bouton gauche -->
+  <circle cx="450" cy="320" r="15" fill="#ffcb2f"/> <!-- Bouton droit -->
+  
+  <!-- Gants -->
+  <circle cx="590" cy="200" r="20" fill="#fff"/>
+  
+  <!-- Moustache -->
+  <path d="M 360 200 Q 400 220 440 200" fill="#4b362c" stroke="#4b362c" stroke-width="8"/>
+</svg>
