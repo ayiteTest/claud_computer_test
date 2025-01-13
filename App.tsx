@@ -14,7 +14,9 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Dimensions,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ResultScreen from './ResultScreen';
@@ -127,8 +129,13 @@ function FormScreen({navigation}: FormScreenProps): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.formContainer}>
+      <LinearGradient
+        colors={['#2E3192', '#1BFFFF']}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 1}}
+        style={styles.gradient}>
+        <ScrollView>
+          <View style={styles.formContainer}>
           <Text style={styles.title}>Formulaire d'inscription</Text>
           
           <View style={styles.inputContainer}>
@@ -173,6 +180,7 @@ function FormScreen({navigation}: FormScreenProps): React.JSX.Element {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      </LinearGradient>
     </SafeAreaView>
   );
 }
@@ -180,16 +188,22 @@ function FormScreen({navigation}: FormScreenProps): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+  },
+  gradient: {
+    flex: 1,
   },
   formContainer: {
     padding: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 30,
     textAlign: 'center',
+    color: '#fff',
+    textShadowColor: 'rgba(0, 0, 0, 0.2)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 3,
   },
   inputContainer: {
     marginBottom: 15,
@@ -197,14 +211,24 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 5,
-    color: '#333',
+    color: '#fff',
+    fontWeight: '600',
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 5,
-    padding: 10,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderRadius: 12,
+    padding: 12,
     fontSize: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   inputError: {
     borderColor: '#ff0000',
@@ -215,15 +239,23 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   button: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#ffffff',
     padding: 15,
-    borderRadius: 5,
+    borderRadius: 25,
     marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   buttonText: {
-    color: '#fff',
+    color: '#2E3192',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
   },
 });
