@@ -130,9 +130,9 @@ function FormScreen({navigation}: FormScreenProps): React.JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
-        colors={['#2E3192', '#1BFFFF']}
+        colors={['#8A2BE2', '#FFD700']}
         start={{x: 0, y: 0}}
-        end={{x: 1, y: 1}}
+        end={{x: 0, y: 1}}
         style={styles.gradient}>
         <ScrollView>
           <View style={styles.formContainer}>
